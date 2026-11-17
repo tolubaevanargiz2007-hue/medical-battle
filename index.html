@@ -3,144 +3,181 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f7e9e4">
-<title>Medical Battle ♡</title>
+<title>Medical Battle 💗</title>
 <style>
-:root{--pink:#c77f91;--pink2:#e8b9bd;--beige:#f7e9e4;--cream:#fffaf7;--brown:#755b5a;--muted:#a88d87;--green:#668d70;--red:#bd7077}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#f8ece7,#f3e1dc);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--brown);min-height:100vh}
-.wrap{max-width:760px;margin:auto;padding:18px 14px 40px}.brand{text-align:center;padding:12px 0 18px}.brand h1{margin:0;color:var(--pink);font-size:clamp(27px,7vw,40px);letter-spacing:1px}.brand p{margin:5px 0;color:var(--muted);font-size:13px;letter-spacing:2px}
-.card{background:var(--cream);border:1px solid #eedbd5;border-radius:22px;padding:20px;margin:12px 0;box-shadow:0 8px 24px #9f77751a}
-h2{font-size:21px;margin:0 0 12px;color:#a96f7c}h3{margin:0 0 8px;font-size:17px}
-p{line-height:1.5}.muted{color:var(--muted);font-size:13px}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}
-input{width:100%;padding:14px 15px;border:1px solid #e8d3cd;border-radius:13px;background:#fff;color:var(--brown);font-size:16px;outline:none}input:focus{border-color:var(--pink)}
-button{border:0;border-radius:14px;background:var(--pink);color:white;font-weight:700;font-size:15px;padding:14px 17px;cursor:pointer;box-shadow:0 4px 10px #c77f9128}button.secondary{background:#f0dfda;color:#916875;box-shadow:none}button.ghost{background:transparent;color:#a96f7c;border:1px solid #e6cbc8;box-shadow:none}button:disabled{opacity:.45;cursor:not-allowed}.full{width:100%}
-.hidden{display:none!important}.pill{display:inline-block;border-radius:30px;background:#f4e5e0;color:#a36e7b;padding:6px 10px;font-size:12px;font-weight:700}.code{font-size:34px;letter-spacing:7px;font-weight:800;color:#a96f7c;text-align:center;padding:8px}
-.players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.player{background:#f8eeea;border-radius:12px;padding:10px;font-size:14px}.question{font-size:20px;line-height:1.4;font-weight:750;margin:14px 0}.answers{display:grid;gap:10px}.answer{background:#f7ece8;color:var(--brown);border:1px solid #ecd8d2;box-shadow:none;text-align:left;display:flex;gap:10px;align-items:center}.answer .letter{background:#ead5d2;border-radius:9px;padding:6px 10px;color:#a36e7b}.answer.selected{border:2px solid var(--pink);background:#f8e5e5}.answer.correct{background:#e7f0e7;border-color:#9bb99e;color:#476e50}.answer.wrong{background:#f7e3e2;border-color:#d9a0a0}
-.bar{height:8px;border-radius:20px;background:#f0dfda;overflow:hidden}.bar>span{display:block;height:100%;background:var(--pink);transition:width .2s}.rank{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:12px;background:#f8eeea;margin:7px 0}.rank:first-child{background:#f5e8d9}.status{padding:10px 12px;border-radius:12px;background:#f8eeea;margin:10px 0;font-size:14px}
-.smallbtn{padding:9px 12px;font-size:13px}.notice{background:#fff3e9;border:1px solid #f0d7c5;padding:12px;border-radius:13px;font-size:13px;line-height:1.45}
-footer{text-align:center;color:#b49790;font-size:12px;padding:15px}
-@media(max-width:420px){.card{padding:16px}.players{grid-template-columns:1fr 1fr}.question{font-size:18px}}
+:root{--pink:#f4cbd5;--rose:#d98fa5;--cream:#fff8f1;--ink:#5c4650;--muted:#927b84;--line:#f0dce1;--green:#dcefe3}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#fff8f1,#fbe9ed);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);min-height:100vh}
+header{padding:22px 18px 12px;text-align:center}h1{margin:0;font-size:29px;color:#b86e87}header p{margin:6px 0;color:var(--muted);font-size:14px}
+main{max-width:680px;margin:0 auto;padding:12px 16px 40px}.card{background:#fffdfb;border:1px solid var(--line);border-radius:22px;padding:19px;margin:12px 0;box-shadow:0 8px 24px #b9829512}
+h2{font-size:20px;margin:0 0 12px;color:#a9627b}h3{font-size:17px;margin:0 0 8px}
+input{width:100%;padding:14px;border:1px solid #e8cbd4;border-radius:13px;font-size:16px;background:white;color:var(--ink);margin:6px 0 12px}
+button{border:0;border-radius:14px;padding:14px 17px;background:#d98fa5;color:white;font-weight:700;font-size:16px;width:100%;margin:6px 0;cursor:pointer}
+button.secondary{background:#f5e4e8;color:#945d71}button:disabled{opacity:.5}
+.small{font-size:13px;color:var(--muted);line-height:1.45}.hidden{display:none!important}.row{display:flex;gap:8px;align-items:center}.row>*{flex:1}
+.pill{display:inline-block;padding:6px 10px;border-radius:20px;background:#f8e9ed;color:#9b6276;font-size:13px;margin:3px}
+.option{display:block;text-align:left;background:#fff7f8;color:var(--ink);border:1px solid #efd8df;font-weight:600}
+.option.selected{background:#f3d5de;border-color:#d98fa5}
+.option.correct{background:#e7f4eb;border-color:#a7d2b5}.option.wrong{background:#fae1df;border-color:#e7aaa4}
+.notice{padding:12px;border-radius:13px;background:#fff2e9;color:#8c6570;font-size:14px;margin:8px 0}
+#status{font-size:13px;color:var(--muted);text-align:center;padding:8px}
+ol{padding-left:22px}li{padding:5px 0}.topline{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="brand"><h1>♡ MEDICAL BATTLE ♡</h1><p>СТОЛБНЯК · РОЖА · ЛЕПТОСПИРОЗ</p></header>
-<div id="config" class="card">
-<h2>Подключение игры</h2>
-<p class="muted">Один раз вставь настройки Firebase из своего проекта. После этого сайт сможет создавать общие комнаты.</p>
-<label class="muted">Firebase config (вставь объект целиком)</label>
-<textarea id="firebaseConfig" rows="5" style="width:100%;margin:7px 0 12px;padding:12px;border:1px solid #e8d3cd;border-radius:12px;font:12px monospace" placeholder='{"apiKey":"...","authDomain":"...","databaseURL":"...","projectId":"...","appId":"..."}'></textarea>
-<button class="full" id="saveConfig">Подключить Firebase</button>
-<p class="muted">Настройки сохраняются только в этом браузере. Не отправляй никому секретные ключи (для Firebase Web config это публичные параметры, но правила базы должны быть настроены).</p>
-</div>
-
-<div id="home" class="hidden">
-<div class="card">
-<h2>Как ты хочешь играть? ♡</h2>
-<p class="muted">Ведущий создаёт комнату и управляет раундами. Остальные участники входят по коду со своих телефонов.</p>
-<div class="row"><button id="hostMode" class="full">Создать игру (ведущий)</button></div>
-<div style="height:10px"></div>
-<div class="row"><input id="joinCode" placeholder="Код комнаты" maxlength="6" autocapitalize="characters" style="text-transform:uppercase"><button id="joinMode">Войти</button></div>
-</div>
-</div>
-
-<div id="hostSetup" class="card hidden">
-<h2>Новая комната ♡</h2>
-<label class="muted">Имя ведущего</label><input id="hostName" value="Ведущий" maxlength="24">
-<p class="muted">В игре участвуют 8 человек. Ведущий управляет вопросами и видит общий рейтинг.</p>
-<button class="full" id="createRoom">Создать комнату</button>
-<button class="ghost full" id="backHome" style="margin-top:9px">Назад</button>
-</div>
-
-<div id="host" class="hidden">
-<div class="card">
-<div class="row between"><span class="pill">ПАНЕЛЬ ВЕДУЩЕГО</span><span class="pill" id="hostState">ОЖИДАНИЕ</span></div>
-<h2 style="margin-top:12px">Код комнаты</h2><div class="code" id="roomCode">------</div>
-<p class="muted" style="text-align:center">Отправь этот код 8 участникам. Ведущий управляет игрой отдельно.</p>
-<h3>Участники <span id="playerCount" class="muted">0/8</span></h3><div id="hostPlayers" class="players"></div>
-<div id="hostLobbyControls"><button id="startGame" class="full" style="margin-top:14px">Начать игру</button></div>
-</div>
-<div id="hostQuestion" class="card hidden">
-<div class="row between"><span class="pill" id="hostTopic">ТЕМА</span><span class="pill" id="hostProgress">1/24</span></div>
-<div class="bar" style="margin:12px 0"><span id="hostBar" style="width:4%"></span></div>
-<div class="question" id="hostQ"></div><div id="hostOptions" class="answers"></div>
-<div class="status" id="answerStatus">Ответили: 0/8</div>
-<div class="row"><button id="nextQuestion" class="full">Следующий вопрос →</button></div>
-</div>
-<div class="card"><h3>Текущий рейтинг</h3><div id="hostRanks"></div></div>
-</div>
-
-<div id="player" class="hidden">
-<div class="card">
-<div class="row between"><span class="pill">УЧАСТНИК</span><span class="pill" id="playerRoom">КОМНАТА</span></div>
-<h2 id="welcome" style="margin-top:12px">Привет!</h2>
-<div id="playerLobby"><div class="status">Ты в комнате. Ожидай начала игры ведущим ♡</div><h3>Участники</h3><div id="playerList" class="players"></div></div>
-<div id="playerPlay" class="hidden">
-<div class="row between"><span class="pill" id="playerTopic">ТЕМА</span><span class="pill" id="playerProgress">1/24</span></div>
-<div class="bar" style="margin:12px 0"><span id="playerBar" style="width:4%"></span></div>
-<div class="question" id="playerQ"></div>
-<div id="playerAnswers" class="answers"></div>
-<div class="status" id="playerFeedback">Выбери один ответ.</div>
-</div>
-<div id="playerFinished" class="hidden"><h2>Игра завершена! ♡</h2><p>Спасибо за участие.</p><h3>Итоговый рейтинг</h3><div id="playerFinalRanks"></div></div>
-</div>
-<div class="card"><h3>Твои баллы</h3><div style="font-size:32px;color:#a96f7c;font-weight:800" id="myScore">0</div></div>
-</div>
-<footer>♡ MEDICAL BATTLE · Учимся играя ♡</footer>
-</div>
-
+<header><h1>Medical Battle 💗</h1><p>Столбняк · Рожа · Лептоспироз</p></header>
+<main>
+<div id="status">Подключаемся к игре…</div>
+<section id="home" class="card hidden">
+<h2>Добро пожаловать 🌸</h2>
+<p class="small">Введи своё имя. Каждый участник играет со своего телефона.</p>
+<input id="name" maxlength="22" placeholder="Твоё имя">
+<button id="createBtn">Создать игру (ведущий)</button>
+<div style="text-align:center;color:#b48a98;margin:8px">или</div>
+<input id="roomInput" maxlength="6" placeholder="Код комнаты">
+<button id="joinBtn" class="secondary">Присоединиться</button>
+<p class="small">До 8 участников. Продолжительность игры — 35 минут.</p>
+</section>
+<section id="lobby" class="card hidden">
+<div class="topline"><span class="pill" id="roomBadge">Комната</span><span class="pill" id="roleBadge">Участник</span></div>
+<h2>Комната ожидания 💞</h2>
+<p>Код для остальных участников:</p><h1 id="roomCode" style="letter-spacing:5px"></h1>
+<button id="copyBtn" class="secondary">Скопировать код</button>
+<h3>Участники</h3><ol id="players"></ol>
+<p class="small" id="lobbyHint">Ожидаем ведущего…</p>
+<button id="startBtn" class="hidden">Начать Medical Battle!</button>
+<button id="leaveBtn" class="secondary">Выйти из комнаты</button>
+</section>
+<section id="game" class="card hidden">
+<div class="topline"><span class="pill" id="progress">Вопрос 1/24</span><span class="pill" id="timer">35:00</span><span class="pill" id="score">Баллы: 0</span></div>
+<h2 id="question"></h2>
+<div id="answers"></div>
+<div id="feedback" class="notice hidden"></div>
+<p class="small" id="waiting"></p>
+<button id="nextBtn" class="hidden">Следующий вопрос →</button>
+</section>
+<section id="results" class="card hidden">
+<h2>Итоги Medical Battle 🏆</h2><p>Таблица результатов:</p><ol id="ranking"></ol>
+<button id="backBtn">На главную</button>
+</section>
+</main>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script>
-const QUESTIONS = [
-["Столбняк","Пациент наступил на загрязнённый гвоздь. Через несколько дней появились тризм и затруднение глотания. Какой механизм объясняет эти симптомы?",["Разрушение эритроцитов","Блокирование выделения тормозных нейромедиаторов","Воспаление оболочек мозга","Поражение печени"],1,15,"Тетаноспазмин блокирует высвобождение ГАМК и глицина, вызывая растормаживание двигательных нейронов и спазмы."],
-["Столбняк","Какой признак наиболее характерен для генерализованного столбняка?",["Вялый паралич","Тризм и болезненные мышечные спазмы","Пузырьковая сыпь","Увеличение лимфоузлов"],1,10,"Для столбняка характерны тризм, мышечная ригидность и болезненные спазмы."],
-["Столбняк","Почему перенесённый столбняк не заменяет вакцинацию?",["Не формируется надёжный иммунитет","Бактерия всегда остаётся в крови","Иммунитет длится только месяц","Вакцина действует только до болезни"],0,15,"Количество токсина, вызывающее заболевание, слишком мало для формирования полноценного иммунитета."],
-["Столбняк","Что важно сделать при загрязнённой ране для профилактики столбняка?",["Только обработать неповреждённую кожу","Очистить рану и удалить загрязнения и нежизнеспособные ткани по показаниям","Наложить герметичную повязку без осмотра","Принимать антибиотик без осмотра"],1,10,"Нужны тщательная обработка раны и оценка прививочного анамнеза; по показаниям вводят вакцину и иммуноглобулин."],
-["Столбняк","Какой признак НЕ характерен для столбняка?",["Тризм","Ригидность мышц","Опистотонус","Восходящий вялый паралич"],3,15,"Восходящий вялый паралич не является типичным проявлением столбняка."],
-["Столбняк","Какой возбудитель вызывает столбняк?",["Clostridium tetani","Streptococcus pyogenes","Leptospira interrogans","Clostridium botulinum"],0,10,"Возбудитель — спорообразующая анаэробная бактерия Clostridium tetani."],
-["Столбняк","Какое осложнение дыхательной системы особенно опасно при тяжёлом столбняке?",["Насморк","Спазм дыхательных мышц и ларингоспазм","Заложенность носа","Увеличение мокроты"],1,15,"Спазм гортани и дыхательных мышц может привести к острой дыхательной недостаточности."],
-["Столбняк","Что является основой профилактики столбняка?",["Ежегодный приём антибиотиков","Плановая вакцинация и экстренная профилактика после травм по показаниям","Изоляция контактных лиц","Противовирусные препараты"],1,10,"Основой являются вакцинация, ревакцинация и профилактика после травм с учётом прививочного анамнеза."],
-["Рожа","Яркая болезненная припухлость голени с чёткими приподнятыми границами и лихорадкой. Какой диагноз наиболее вероятен?",["Лептоспироз","Рожа","Столбняк","Ботулизм"],1,10,"Для рожи характерны яркая эритема, отёк, болезненность и чёткая граница воспаления."],
-["Рожа","Какой микроорганизм чаще всего вызывает рожу?",["Leptospira interrogans","Clostridium tetani","Streptococcus pyogenes","Salmonella typhi"],2,10,"Частый возбудитель рожи — β-гемолитический стрептококк группы А."],
-["Рожа","Через какие входные ворота чаще всего проникает возбудитель рожи?",["Повреждения кожи и микротрещины","Желудок","Укусы комаров","Дыхательные пути"],0,15,"Входными воротами могут быть трещины, ссадины, расчёсы и межпальцевые поражения кожи."],
-["Рожа","Какой местный признак наиболее характерен для рожи?",["Звёздчатые кровоизлияния","Яркая эритема с чёткими неровными границами","Пузырьки по ходу нерва","Бледная сыпь"],1,15,"Эритематозный очаг часто имеет неровные очертания, напоминающие языки пламени."],
-["Рожа","Какое осложнение может возникнуть при повторных эпизодах рожи?",["Лимфостаз и стойкий отёк конечности","Поражение слухового нерва","Паралич дыхательных мышц","Типичная острая печёночная недостаточность"],0,20,"Повторное воспаление лимфатических сосудов может нарушать лимфоотток и приводить к хроническому лимфостазу."],
-["Рожа","Что особенно важно контролировать медсестре при уходе за пациентом с рожей?",["Массировать воспалённую область","Температуру, состояние кожи и выраженность отёка","Прогревать очаг горячими компрессами","Самостоятельно вскрывать пузыри"],1,15,"Важно наблюдать за температурой, распространением эритемы, отёком, болью и выполнением назначений."],
-["Рожа","Какой признак больше поддерживает диагноз рожи, а не контактного дерматита?",["Зуд после крема","Острое начало с лихорадкой и болезненной яркой эритемой","Сухость без температуры","Шелушение без воспаления"],1,15,"Для рожи характерны острое начало, интоксикация и местное инфекционное воспаление."],
-["Рожа","Какой подход к лечению рожи является основным?",["Антибактериальная терапия по назначению врача","Только противогрибковая мазь","Только противовирусные препараты","Полный отказ от антибиотиков"],0,10,"При роже назначают антибиотики, активные против стрептококков."],
-["Лептоспироз","После купания в пресном водоёме появились лихорадка и сильная боль в икроножных мышцах. О каком заболевании следует подумать?",["Рожа","Столбняк","Лептоспироз","Дифтерия"],2,15,"Лептоспироз связан с водой, загрязнённой мочой животных; выраженная боль в икроножных мышцах — характерный признак."],
-["Лептоспироз","Как чаще всего происходит заражение лептоспирозом?",["Воздушно-капельным путём","Через кожу и слизистые при контакте с заражённой водой или почвой","Через комаров","Через рукопожатие"],1,15,"Лептоспиры проникают через повреждённую кожу и слизистые оболочки."],
-["Лептоспироз","Какой комплекс характерен для тяжёлой формы лептоспироза — болезни Вейля?",["Желтуха, почечная недостаточность и геморрагические проявления","Тризм и опистотонус","Эритема с чёткими границами","Потеря обоняния"],0,20,"Тяжёлая форма может сопровождаться желтухой, острым повреждением почек и кровотечениями."],
-["Лептоспироз","Какой показатель особенно важно контролировать при тяжёлом лептоспирозе?",["Только гемоглобин","Креатинин и показатели функции почек","Только группу крови","Только глюкозу"],1,15,"Лептоспироз способен вызывать острое повреждение почек, поэтому важны креатинин, мочевина, диурез и электролиты."],
-["Лептоспироз","Какое животное является важным природным резервуаром лептоспир?",["Только кошки","Грызуны, особенно крысы","Только птицы","Рыбы"],1,10,"Грызуны — важные резервуары инфекции и выделяют лептоспиры с мочой."],
-["Лептоспироз","Какой внешний клинический признак может наблюдаться при лептоспирозе?",["Покраснение конъюнктив без выраженного гнойного отделяемого","Чёткая эритема голени","Тризм и сардоническая улыбка","Плёнка на миндалинах"],0,15,"Конъюнктивальная инъекция является характерным диагностическим ориентиром."],
-["Лептоспироз","Какой метод может использоваться для раннего подтверждения лептоспироза?",["ПЦР на лептоспиры","Только рентген грудной клетки","Мазок из зева","Анализ кала на яйца гельминтов"],0,15,"ПЦР выявляет генетический материал лептоспир; серологические исследования также важны."],
-["Лептоспироз","Что особенно важно контролировать медсестре при тяжёлом лептоспирозе?",["Не учитывать объём мочи","Диурез, температуру, давление и признаки кровотечения","Посещение бассейна","Отменить лабораторный контроль"],1,15,"Наблюдение за диурезом, гемодинамикой и кровоточивостью помогает выявить осложнения."]
-];
-let app,db,auth,user=null,roomCode=null,role=null,playerName=null,roomRef=null,roomData=null,roomListener=null;
+const firebaseConfig={
+ apiKey:"AIzaSyDvkMydA_w1D4PrKsNV7zuf8e2oCijrJPg",
+ authDomain:"medical-battle.firebaseapp.com",
+ databaseURL:"https://medical-battle-default-rtdb.firebaseio.com",
+ projectId:"medical-battle",
+ storageBucket:"medical-battle.firebasestorage.app",
+ messagingSenderId:"998863053265",
+ appId:"1:998863053265:web:782a7577f2ea5ad67fc0f0"
+};
+firebase.initializeApp(firebaseConfig);
+const auth=firebase.auth(), db=firebase.database();
 const $=id=>document.getElementById(id);
-const show=id=>$(id).classList.remove('hidden'),hide=id=>$(id).classList.add('hidden');
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function getConfig(){try{return JSON.parse(localStorage.getItem('mb_firebase')||'null')}catch(e){return null}}
-function setScreen(ids){['config','home','hostSetup','host','player'].forEach(id=>hide(id));ids.forEach(show)}
-function msg(e){alert(e?.message||String(e))}
-async function connect(cfg){if(!firebase.apps.length)firebase.initializeApp(cfg);app=firebase.app();auth=firebase.auth();db=firebase.database();await auth.signInAnonymously();user=auth.currentUser;setScreen(['home'])}
-$('saveConfig').onclick=async()=>{try{const cfg=JSON.parse($('firebaseConfig').value);localStorage.setItem('mb_firebase',JSON.stringify(cfg));await connect(cfg)}catch(e){msg(e)}};
-(async()=>{const c=getConfig();if(c){$('firebaseConfig').value=JSON.stringify(c,null,2);try{await connect(c)}catch(e){setScreen(['config']);msg(e)}}})();
-$('hostMode').onclick=()=>setScreen(['hostSetup']);
-$('backHome').onclick=()=>setScreen(['home']);
-$('createRoom').onclick=async()=>{try{if(!user)throw Error('Сначала подключи Firebase.');role='host';playerName=$('hostName').value.trim()||'Ведущий';roomCode=Math.random().toString(36).slice(2,8).toUpperCase();roomRef=db.ref('rooms/'+roomCode);await roomRef.set({hostUid:user.uid,hostName:playerName,status:'lobby',current:0,createdAt:Date.now(),players:{},answers:{}});setScreen(['host']);$('roomCode').textContent=roomCode;listenRoom()}catch(e){msg(e)}};
-$('joinMode').onclick=async()=>{try{if(!user)throw Error('Сначала подключи Firebase.');roomCode=$('joinCode').value.trim().toUpperCase();if(roomCode.length!==6)throw Error('Введи шестизначный код комнаты.');const snap=await db.ref('rooms/'+roomCode).get();if(!snap.exists())throw Error('Комната не найдена. Проверь код.');if(snap.val().status!=='lobby')throw Error('Игра уже началась.');playerName=prompt('Как тебя зовут?')?.trim();if(!playerName) return;const players=snap.val().players||{};if(Object.keys(players).length>=8)throw Error('В комнате уже 8 участников.');role='player';roomRef=db.ref('rooms/'+roomCode);await roomRef.child('players/'+user.uid).set({name:playerName,joinedAt:Date.now()});setScreen(['player']);$('welcome').textContent='Привет, '+playerName+'! ♡';$('playerRoom').textContent=roomCode;listenRoom()}catch(e){msg(e)}};
-function listenRoom(){if(roomListener)roomRef.off('value',roomListener);roomListener=s=>{if(!s.exists()){alert('Комната закрыта.');location.reload();return}roomData=s.val();role==='host'?renderHost():renderPlayer()};roomRef.on('value',roomListener)};
-function getPlayers(){return Object.entries(roomData.players||{}).map(([uid,p])=>({uid,name:p.name||'Игрок',score:calcScore(uid)})).sort((a,b)=>b.score-a.score)}
-function calcScore(uid){let n=0;Object.values(roomData.answers||{}).forEach(q=>{if(q&&q[uid])n+=q[uid].points||0});return n}
-function renderRanks(target){const arr=getPlayers();$(target).innerHTML=arr.map((p,i)=>`<div class="rank"><span>${['🥇','🥈','🥉'][i]||'♡'} ${esc(p.name)}</span><b>${p.score} б.</b></div>`).join('')||'<p class="muted">Пока нет игроков</p>'}
-function renderHost(){const players=getPlayers();$('playerCount').textContent=players.length+'/8';$('hostPlayers').innerHTML=players.map((p,i)=>`<div class="player">${i+1}. ${esc(p.name)}</div>`).join('');$('hostState').textContent=roomData.status==='lobby'?'ОЖИДАНИЕ':roomData.status==='finished'?'ЗАВЕРШЕНО':'ИДЁТ ИГРА';$('startGame').disabled=players.length<1;if(roomData.status==='lobby'){show('hostLobbyControls');hide('hostQuestion')}else{hide('hostLobbyControls');if(roomData.status==='finished'){hide('hostQuestion');$('hostRanks').innerHTML='';renderRanks('hostRanks')}else{show('hostQuestion');const i=roomData.current,q=QUESTIONS[i];$('hostTopic').textContent=q[0];$('hostProgress').textContent=(i+1)+'/24';$('hostBar').style.width=((i+1)/24*100)+'%';$('hostQ').textContent=q[1];$('hostOptions').innerHTML=q[2].map((a,j)=>`<div class="answer"><span class="letter">${'ABCD'[j]}</span>${esc(a)}</div>`).join('');const answered=Object.keys((roomData.answers||{})[i]||{}).length;$('answerStatus').textContent='Ответили: '+answered+'/'+players.length;$('nextQuestion').textContent=i===23?'Завершить игру ♡':'Следующий вопрос →'}}renderRanks('hostRanks')}
-function renderPlayer(){const status=roomData.status,players=getPlayers();$('playerList').innerHTML=players.map((p,i)=>`<div class="player">${i+1}. ${esc(p.name)}</div>`).join('');$('myScore').textContent=calcScore(user.uid);if(status==='lobby'){show('playerLobby');hide('playerPlay');hide('playerFinished');return}if(status==='finished'){hide('playerLobby');hide('playerPlay');show('playerFinished');renderRanks('playerFinalRanks');return}hide('playerLobby');hide('playerFinished');show('playerPlay');const i=roomData.current,q=QUESTIONS[i],mine=(roomData.answers||{})[i]?.[user.uid];$('playerTopic').textContent=q[0];$('playerProgress').textContent=(i+1)+'/24';$('playerBar').style.width=((i+1)/24*100)+'%';$('playerQ').textContent=q[1];$('playerAnswers').innerHTML=q[2].map((a,j)=>`<button class="answer ${mine?(j===q[3]?'correct':j===mine.choice?'wrong':''):''}" ${mine?'disabled':''} data-choice="${j}"><span class="letter">${'ABCD'[j]}</span>${esc(a)}</button>`).join('');$('playerFeedback').textContent=mine?(mine.correct?'Верно! +'+mine.points+' баллов. ':'Ответ принят. ')+q[5]:'Выбери один ответ. После отправки изменить его нельзя.';if(!mine)document.querySelectorAll('#playerAnswers button').forEach(b=>b.onclick=()=>submitAnswer(Number(b.dataset.choice)))}
-async function submitAnswer(choice){const q=QUESTIONS[roomData.current];const points=choice===q[3]?q[4]:0;try{const ref=roomRef.child('answers/'+roomData.current+'/'+user.uid);const result=await ref.transaction(v=>v===null?{choice,correct:points>0,points,at:Date.now()}:undefined);if(!result.committed)alert('Ответ уже принят.');}catch(e){msg(e)}}
-$('startGame').onclick=async()=>{if(!confirm('Начать игру для всех участников?'))return;await roomRef.update({status:'playing',current:0})};
-$('nextQuestion').onclick=async()=>{const i=roomData.current;if(i>=23){await roomRef.update({status:'finished'});return}await roomRef.update({current:i+1})};
+const questions=[
+["Какой микроорганизм вызывает столбняк?","Clostridium tetani","Staphylococcus aureus","Leptospira interrogans","Corynebacterium diphtheriae",0,"Столбняк вызывает Clostridium tetani — спорообразующая анаэробная бактерия."],
+["Через какие ворота чаще всего попадает возбудитель столбняка?","Через повреждённую кожу и раны","Через дыхательные пути","Через неповреждённую кожу","Через укусы комаров",0,"Споры попадают в организм через загрязнённые раны."],
+["Какой токсин вызывает основные симптомы столбняка?","Тетаноспазмин","Эндотоксин","Ботулотоксин","Эритрогенный токсин",0,"Тетаноспазмин нарушает тормозную передачу нервных импульсов."],
+["Какой характерный ранний признак бывает при столбняке?","Тризм — затруднение открывания рта","Сыпь на ладонях","Желтуха","Сильный насморк",0,"Тризм связан со спазмом жевательных мышц."],
+["Как передаётся столбняк от человека к человеку?","Обычно не передаётся","Воздушно-капельным путём","Через рукопожатие","Через общую посуду",0,"Столбняк не является заразным заболеванием."],
+["Что является главной специфической профилактикой столбняка?","Вакцинация анатоксином","Антибиотики каждый месяц","Витамины","Изоляция больного",0,"Плановая вакцинация и ревакцинация формируют антитоксический иммунитет."],
+["Какое положение тела может наблюдаться при тяжёлом столбняке?","Опистотонус","Поза эмбриона при менингите","Положение ортопноэ","Поза лягушки",0,"При опистотонусе тело резко выгибается из-за мышечных спазмов."],
+["Что важно сделать при загрязнённой ране у непривитого человека?","Срочно обратиться за медицинской помощью для профилактики","Заклеить и забыть","Прогреть рану","Самостоятельно принять обезболивающее",0,"Нужна оценка раны и экстренная профилактика по прививочному анамнезу."],
+["Какой возбудитель вызывает рожу?","Бета-гемолитический стрептококк группы А","Clostridium tetani","Leptospira","Вирус гриппа",0,"Чаще всего возбудитель рожи — Streptococcus pyogenes."],
+["Как обычно выглядит очаг рожистого воспаления?","Яркое покраснение с чёткими неровными границами","Мелкие пузырьки по всему телу","Чёрный струп без покраснения","Бледные пятна без отёка",0,"Типичны яркая эритема, отёк и чёткие приподнятые края."],
+["Как чаще всего начинается рожа?","Остро, с лихорадки и озноба","Постепенно без температуры","Только с кашля","С потери зрения",0,"Общие симптомы нередко предшествуют местным проявлениям."],
+["Где часто локализуется рожа?","На голенях и лице","Только на волосистой части головы","Только на ладонях","Только на животе",0,"Частые места — нижние конечности и лицо."],
+["Через что стрептококк может проникать в кожу?","Через трещины, ссадины и другие повреждения","Только через лёгкие","Только через желудок","Через неповреждённую кожу всегда",0,"Входными воротами часто становятся микротравмы и грибковые поражения стоп."],
+["Какое осложнение возможно при повторной роже конечности?","Лимфостаз и слоновость","Катаракта","Бронхиальная астма","Глухота",0,"Повреждение лимфатических путей может приводить к стойкому отёку."],
+["Какой метод лечения обычно назначает врач при роже?","Антибактериальную терапию","Только противовирусные препараты","Только противогрибковые средства","Только массаж",0,"Основу лечения составляет антибиотикотерапия по назначению врача."],
+["Что важно рекомендовать пациенту для профилактики рецидива рожи?","Уход за кожей и лечение трещин/грибка стоп","Расчёсывать кожу","Отказаться от мытья ног","Самостоятельно отменять антибиотики",0,"Важно устранять входные ворота инфекции и соблюдать назначения."],
+["Какой возбудитель вызывает лептоспироз?","Leptospira","Streptococcus pyogenes","Clostridium tetani","Salmonella typhi",0,"Лептоспироз вызывают патогенные бактерии рода Leptospira."],
+["Как человек чаще всего заражается лептоспирозом?","При контакте с водой или почвой, загрязнённой мочой животных","При разговоре с больным","Через укус клеща","Через воздушные капли",0,"Заражение часто происходит через повреждённую кожу или слизистые."],
+["Какие животные могут быть источником лептоспир?","Грызуны и сельскохозяйственные животные","Только птицы","Только рыбы","Только кошки",0,"Резервуаром могут быть грызуны, собаки, свиньи, крупный рогатый скот."],
+["Какой симптом характерен для лептоспироза?","Выраженная боль в икроножных мышцах","Тризм","Чётко ограниченная эритема","Паралич жевательных мышц",0,"Сильная миалгия, особенно в икроножных мышцах, характерна для болезни."],
+["Что может развиться при тяжёлом лептоспирозе?","Поражение почек и печени, желтуха","Только насморк","Только кожный зуд","Кариес",0,"Тяжёлая форма может сопровождаться почечной недостаточностью и желтухой."],
+["Какой путь заражения лептоспирозом наиболее типичен?","Водный","Воздушно-капельный","Половой","Трансплацентарный как основной",0,"Часто заражаются при купании или работе в заражённой воде."],
+["Какая мера помогает предотвратить лептоспироз?","Защита от грызунов и избегание подозрительных водоёмов","Употребление антибиотиков для профилактики всем","Отказ от вакцинации животных","Контакт с паводковой водой",0,"Профилактика включает борьбу с грызунами и защиту от загрязнённой воды."],
+["Какое действие медсестры важно при подозрении на инфекцию?","Оценить состояние, сообщить врачу и выполнить назначения","Самостоятельно поставить окончательный диагноз","Отпустить пациента без осмотра","Назначить антибиотик без врача",0,"Медсестра оценивает состояние, обеспечивает наблюдение и своевременно информирует врача."]
+].map(q=>{const opts=q.slice(1,5);const right=opts[q[5]];for(let i=opts.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[opts[i],opts[j]]=[opts[j],opts[i]];}return {q:q[0],a:opts,correct:opts.indexOf(right),explain:q[6]};});
+let user=null, room=null, isHost=false, roomRef=null, roomData=null, answered=false, selected=-1, timerHandle=null, roomListener=null;
+function show(id){["home","lobby","game","results"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
+function setStatus(t){$("status").textContent=t}
+auth.signInAnonymously().then(c=>{user=c.user;setStatus("Подключено 💗");show("home")}).catch(e=>setStatus("Ошибка входа: "+e.message));
+function cleanName(){return $("name").value.trim().slice(0,22)||"Участник"}
+function makeCode(){return Math.random().toString(36).slice(2,6).toUpperCase()}
+function detach(){if(roomRef&&roomListener)roomRef.off("value",roomListener);roomListener=null;clearInterval(timerHandle)}
+function watchRoom(){
+ roomRef=db.ref("rooms/"+room);
+ roomListener=s=>{if(!s.exists()){setStatus("Комната не найдена");return}roomData=s.val();renderRoom()};
+ roomRef.on("value",roomListener);
+}
+function renderRoom(){
+ if(!roomData)return;
+ $("roomCode").textContent=room;$("roomBadge").textContent="Комната "+room;$("roleBadge").textContent=isHost?"Ведущий":"Участник";
+ const players=Object.values(roomData.players||{}).sort((a,b)=>(a.joined||0)-(b.joined||0));
+ $("players").innerHTML=players.map(p=>`<li>${esc(p.name)}${p.uid===roomData.hostId?" — ведущий":""}</li>`).join("");
+ if(roomData.state==="lobby"){show("lobby");$("startBtn").classList.toggle("hidden",!isHost);$("lobbyHint").textContent=players.length+"/8 участников. Отправь друзьям код комнаты."}
+ if(roomData.state==="playing"){show("game");renderGame()}
+ if(roomData.state==="finished"){show("results");renderResults()}
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+$("createBtn").onclick=async()=>{
+ if(!user)return;const code=makeCode();room=code;isHost=true;
+ const data={hostId:user.uid,state:"lobby",createdAt:Date.now(),players:{[user.uid]:{uid:user.uid,name:cleanName(),score:0,joined:Date.now()}},current:0,endAt:null,answers:{}};
+ try{await db.ref("rooms/"+room).set(data);watchRoom()}catch(e){alert("Не удалось создать комнату: "+e.message)}
+};
+$("joinBtn").onclick=async()=>{
+ if(!user)return;const code=$("roomInput").value.trim().toUpperCase();if(!code){alert("Введи код комнаты");return}
+ const ref=db.ref("rooms/"+code);
+ try{const s=await ref.once("value");if(!s.exists()){alert("Комната не найдена");return}
+ const d=s.val(), count=Object.keys(d.players||{}).length;
+ if(d.state!=="lobby"){alert("Игра уже началась");return}
+ if(count>=8&&!d.players[user.uid]){alert("В комнате уже 8 участников");return}
+ room=code;isHost=d.hostId===user.uid;
+ await ref.child("players/"+user.uid).update({uid:user.uid,name:cleanName(),score:0,joined:Date.now()});watchRoom()
+ }catch(e){alert("Ошибка подключения: "+e.message)}
+};
+$("copyBtn").onclick=()=>{if(navigator.clipboard)navigator.clipboard.writeText(room).then(()=>$("copyBtn").textContent="Скопировано 💗").catch(()=>alert("Код комнаты: "+room));else alert("Код комнаты: "+room)};
+$("leaveBtn").onclick=()=>{detach();room=null;roomData=null;show("home")};
+$("startBtn").onclick=async()=>{if(!isHost)return;await roomRef.update({state:"playing",current:0,endAt:Date.now()+35*60*1000,answers:{}})};
+function renderGame(){
+ const idx=roomData.current||0;if(idx>=questions.length){if(isHost)roomRef.update({state:"finished"});return}
+ const q=questions[idx];$("progress").textContent=`Вопрос ${idx+1}/${questions.length}`;
+ $("question").textContent=q.q;$("score").textContent="Баллы: "+((roomData.players||{})[user.uid]?.score||0);
+ const time=Math.max(0,Math.ceil(((roomData.endAt||Date.now())-Date.now())/1000));
+ $("timer").textContent=Math.floor(time/60)+":"+String(time%60).padStart(2,"0");
+ if(!timerHandle)timerHandle=setInterval(()=>{if(!roomData||roomData.state!=="playing")return;const t=Math.max(0,Math.ceil((roomData.endAt-Date.now())/1000));$("timer").textContent=Math.floor(t/60)+":"+String(t%60).padStart(2,"0");if(t===0&&isHost)roomRef.update({state:"finished"})},1000);
+ const myAnswer=(roomData.answers||{})[idx]?.[user.uid];
+ answered=!!myAnswer;selected=myAnswer?myAnswer.choice:-1;
+ $("answers").innerHTML=q.a.map((a,i)=>`<button class="option ${selected===i?"selected":""} ${answered&&i===q.correct?"correct":""} ${answered&&selected===i&&selected!==q.correct?"wrong":""}" ${answered?"disabled":""} data-i="${i}">${"АБВГ"[i]}. ${esc(a)}</button>`).join("");
+ [...$("answers").querySelectorAll("button")].forEach(b=>b.onclick=()=>answer(Number(b.dataset.i)));
+ $("feedback").classList.toggle("hidden",!answered);
+ if(answered)$("feedback").textContent=(selected===q.correct?"Верно! +1 балл 💗 ":"Ответ принят. ")+q.explain;
+ $("waiting").textContent="Ответы сохраняются автоматически. После ответа дождись следующего вопроса.";
+ $("nextBtn").classList.toggle("hidden",!isHost);
+}
+async function answer(choice){
+ if(answered||!roomData||roomData.state!=="playing")return;
+ const idx=roomData.current, correct=questions[idx].correct;
+ answered=true;selected=choice;
+ const updates={};updates[`answers/${idx}/${user.uid}`]={choice,correct:choice===correct,at:Date.now()};
+ if(choice===correct)updates[`players/${user.uid}/score`]=((roomData.players||{})[user.uid]?.score||0)+1;
+ await roomRef.update(updates);
+}
+$("nextBtn").onclick=async()=>{
+ if(!isHost||!roomData)return;
+ const next=(roomData.current||0)+1;
+ if(next>=questions.length)await roomRef.update({state:"finished"});
+ else await roomRef.update({current:next});
+};
+function renderResults(){
+ clearInterval(timerHandle);timerHandle=null;
+ const players=Object.values(roomData.players||{}).sort((a,b)=>(b.score||0)-(a.score||0));
+ $("ranking").innerHTML=players.map(p=>`<li><b>${esc(p.name)}</b> — ${p.score||0} баллов</li>`).join("");
+}
+$("backBtn").onclick=()=>{detach();room=null;roomData=null;show("home")};
 </script>
 </body></html>
